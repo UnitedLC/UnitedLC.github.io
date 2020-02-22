@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>登录 ‹ United LC Blog — WordPress</title><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="dashicons-css" href="https://unitedlc.github.io/wp-includes/css/dashicons.min.css" type="text/css" media="all"><link rel="stylesheet" id="buttons-css" href="https://unitedlc.github.io/wp-includes/css/buttons.min.css" type="text/css" media="all"><link rel="stylesheet" id="forms-css" href="https://unitedlc.github.io/wp-admin/css/forms.min.css" type="text/css" media="all"><link rel="stylesheet" id="l10n-css" href="https://unitedlc.github.io/wp-admin/css/l10n.min.css" type="text/css" media="all"><link rel="stylesheet" id="login-css" href="https://unitedlc.github.io/wp-admin/css/login.min.css" type="text/css" media="all"><link rel="stylesheet" type="text/css" href="https://unitedlc.github.io/wp-content/themes/Sakura/inc/login.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/gh/jquery/jquery@1.8.2/jquery.min.js"></script><link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap" rel="stylesheet"><style>body{font-family:"Noto Serif SC","Source Han Serif SC","Source Han Serif","source-han-serif-sc","PT Serif","SongTi SC","MicroSoft Yahei",Georgia,serif !important;}</style><meta name="referrer" content="strict-origin-when-cross-origin"><meta name="viewport" content="width=device-width"><link rel="icon" href="https://unitedlc.github.io/wp-content/uploads/2020/02/cropped-f9198618367adab4cb2da41788d4b31c8601e4e1-32x32.png" sizes="32x32"><link rel="icon" href="https://unitedlc.github.io/wp-content/uploads/2020/02/cropped-f9198618367adab4cb2da41788d4b31c8601e4e1-192x192.png" sizes="192x192"><link rel="apple-touch-icon-precomposed" href="https://unitedlc.github.io/wp-content/uploads/2020/02/cropped-f9198618367adab4cb2da41788d4b31c8601e4e1-180x180.png"><meta name="msapplication-TileImage" content="https://unitedlc.github.io/wp-content/uploads/2020/02/cropped-f9198618367adab4cb2da41788d4b31c8601e4e1-270x270.png"></head><body class="login no-js login-action-login wp-core-ui  locale-zh-cn">
+	<script type="text/javascript">
+		document.body.className = document.body.className.replace('no-js','js');
+	</script><div id="login">
+		<h1><a href="https://unitedlc.github.io/">United LC Blog</a></h1>
+	
+		<form name="loginform" id="loginform" action="https://unitedlc.github.io/wp-login.php" method="post">
+			<p>
+				<label for="user_login">用户名或电子邮件地址</label>
+				<input type="text" name="log" id="user_login" class="input" value="" size="20" autocapitalize="off"></p>
+
+			<div class="user-pass-wrap">
+				<label for="user_pass">密码</label>
+				<div class="wp-pwd">
+					<input type="password" name="pwd" id="user_pass" class="input password-input" value="" size="20"><button type="button" class="button button-secondary wp-hide-pw hide-if-no-js" data-toggle="0" aria-label="显示密码">
+						<span class="dashicons dashicons-visibility" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+						<p class="forgetmenot"><input name="rememberme" type="checkbox" id="rememberme" value="forever"><label for="rememberme">记住我的登录信息</label></p>
+			<p class="submit">
+				<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="登录"><input type="hidden" name="redirect_to" value="https://unitedlc.github.io/wp-admin/"><input type="hidden" name="testcookie" value="1"></p>
+		</form>
+
+					<p id="nav">
+									<a href="https://unitedlc.github.io/wp-login.php">忘记密码？</a>
+								</p>
+					<script type="text/javascript">
+			function wp_attempt_focus() {setTimeout( function() {try {d = document.getElementById( "user_login" );d.focus(); d.select();} catch( er ) {}}, 200);}
+wp_attempt_focus();
+if ( typeof wpOnload === 'function' ) { wpOnload() }		</script><p id="backtoblog"><a href="https://unitedlc.github.io/">
+		← 返回到United LC Blog		</a></p>
+			</div>
+	<script type="text/javascript" src="https://unitedlc.github.io/wp-content/themes/Sakura/js/login.js"></script><script type="text/javascript">
+jQuery("body").prepend("<div class=\"loading\"><img src=\"https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.9/img/Sakura/images/login_loading.gif\" width=\"58\" height=\"10\"><div id=\"bg\"><img />");
+jQuery('#bg').children('img').attr('src', 'https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.2.7/images/hd.png').load(function(){
+	resizeImage('bg');
+	jQuery(window).bind("resize", function() { resizeImage('bg'); });
+	jQuery('.loading').fadeOut();
+});</script><script>
+	function verificationOK(){
+		var x, y, z = "verification";
+		var x=$('#loginform').find('input[name="verification"]').val();
+		//var x=document.forms["loginform"]["verification"].value; //原生js实现
+		var y=$('#registerform').find('input[name="verification"]').val();
+		var z=$('#lostpasswordform').find('input[name="verification"]').val();
+		if (x=="verification" || y=="verification" || z=="verification"){
+		  alert("Please slide the block to verificate!");
+		  return false;
+	  }
+	}
+	$(document).ready(function(){
+		$( '<p><div id="verification-slider"><div id="slider"><div id="slider_bg"><span id="label">»<span id="labelTip">Slide to Verificate<input type="hidden" name="verification" value="verification" /><p>' ).insertBefore( $( ".submit" ) );
+		$('form').attr('onsubmit','return verificationOK();');
+        $('h1 a').attr('style','background-image: url(https://unitedlc.github.io/wp-content/themes/Sakura/images/mashiro-logo-s.png); ');
+		$(".forgetmenot").replaceWith('<p class="forgetmenot">Remember Me<input name="rememberme" id="rememberme" value="forever" type="checkbox"><label for="rememberme" style="float: right;margin-top: 5px;transform: scale(2);margin-right: -10px;">');
+	});
+	</script><script type="text/javascript">
+		var startTime = 0;
+		var endTime = 0;
+		var numTime = 0;
+		$(function () {
+			var slider = new SliderUnlock("#slider",{
+			successLabelTip : "OK"
+		},function(){
+			var sli_width = $("#slider_bg").width();
+			$('#verification-slider').html('').append('<input id="verification-ok" class="input" type="text" size="25" value="OK!" name="verification" disabled="true" />');
+
+			endTime = nowTime();
+			numTime = endTime-startTime;
+			endTime = 0;
+			startTime = 0;
+			// 获取到滑动使用的时间 滑动的宽度
+			// alert( numTime );
+			// alert( sli_width );
+		});
+			slider.init();
+		})
+
+		/**
+		* 获取时间精确到毫秒
+		* @type
+		*/
+		function nowTime(){
+			var myDate = new Date();
+			var H = myDate.getHours();//获取小时
+			var M = myDate.getMinutes(); //获取分钟
+			var S = myDate.getSeconds();//获取秒
+			var MS = myDate.getMilliseconds();//获取毫秒
+			var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
+			return milliSeconds;
+		}
+	</script><script type="text/javascript" src="https://unitedlc.github.io/wp-content/themes/Sakura/user/verification.js"></script><script type="text/javascript" src="https://unitedlc.github.io/wp-includes/js/jquery/jquery.js"></script><script type="text/javascript" src="https://unitedlc.github.io/wp-includes/js/jquery/jquery-migrate.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var _zxcvbnSettings = {"src":"https:\/\/unitedlc.github.io\/wp-includes\/js\/zxcvbn.min.js"};
+/* ]]> */
+</script><script type="text/javascript" src="https://unitedlc.github.io/wp-includes/js/zxcvbn-async.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var pwsL10n = {"unknown":"\u5bc6\u7801\u5f3a\u5ea6\u672a\u77e5","short":"\u975e\u5e38\u5f31","bad":"\u5f31","good":"\u4e2d\u7b49","strong":"\u5f3a","mismatch":"\u4e0d\u5339\u914d"};
+/* ]]> */
+</script><script type="text/javascript" src="https://unitedlc.github.io/wp-admin/js/password-strength-meter.min.js"></script><script type="text/javascript" src="https://unitedlc.github.io/wp-includes/js/underscore.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wordpress\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script><script type="text/javascript" src="https://unitedlc.github.io/wp-includes/js/wp-util.min.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var userProfileL10n = {"warn":"\u60a8\u7684\u65b0\u5bc6\u7801\u672a\u88ab\u4fdd\u5b58\u3002","warnWeak":"\u786e\u8ba4\u4f7f\u7528\u5f31\u5bc6\u7801","show":"\u663e\u793a","hide":"\u9690\u85cf","cancel":"\u53d6\u6d88","ariaShow":"\u663e\u793a\u5bc6\u7801","ariaHide":"\u9690\u85cf\u5bc6\u7801"};
+/* ]]> */
+</script><script type="text/javascript" src="https://unitedlc.github.io/wp-admin/js/user-profile.min.js"></script><div class="clear"></div>
+	</body></html>
